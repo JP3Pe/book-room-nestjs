@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "command": "yarn install && yarn run prebuild && yarn start:dev",
+            "name": "NestJS Start",
+            "request": "launch",
+            "type": "node-terminal"
+        }
+    ]
+}
