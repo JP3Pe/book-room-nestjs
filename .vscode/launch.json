@@ -2,7 +2,7 @@
     "configurations": [
         {
             "command": "yarn install && yarn run prebuild && yarn start:dev",
-            "name": "NestJS Start",
+            "name": "NestJS start",
             "request": "launch",
             "type": "node-terminal"
         }

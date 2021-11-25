@@ -1,0 +1,4 @@
+@Host = http://localhost:8008
+
+# Hello
+GET {{Host}}/
