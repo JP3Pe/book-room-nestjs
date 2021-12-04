@@ -1,7 +1,7 @@
 {
     "configurations": [
         {
-            "command": "yarn install && yarn run prebuild && yarn start:dev",
+            "command": "source ./env-16.13.1/bin/activate && npx yarn install && npx yarn run prebuild && npx yarn start:dev",
             "name": "NestJS start",
             "request": "launch",
             "type": "node-terminal"

@@ -382,3 +382,6 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/windows,macos,git,node,visualstudiocode,webstorm,yarn
 
 # gitignore.io end
+
+# nodeenv
+env-16.13.1
