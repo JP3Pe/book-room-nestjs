@@ -1,0 +1,33 @@
+version: "3.8"
+services:
+  mysql-service:
+    build:
+      context: ./docker/mysql
+      dockerfile: Dockerfile
+    image: jp3pe/plane/mysql-service
+    container_name: plane-mysql-service
+    ports:
+      - 3310:3306
+    command:
+      # 한글과 이모지 입력을 위하여 기본 문자셋 인코딩 변경
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+  plane-service:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: jp3pe/plane/backend-service
+    depends_on: 
+      - mysql-service
+    container_name: plane-backend-service
+    ports:
+      - "8008:8008"
+    environment:
+      - SERVER_PORT=8008
+      - DB_MASTER_HOST=host.docker.internal
+      - DB_MASTER_PORT=3310
+      - DB_MASTER_USERNAME=root
+      - DB_MASTER_PASSWORD=example
+      - DB_MASTER_DATABASE=plane
+    command: ["sh", "-c", "sleep 20 && yarn run start:prod"]
+    
